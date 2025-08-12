@@ -1,0 +1,90 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+import { CheckCircleIcon } from '@heroicons/react/24/solid';
+
+const steps = [
+  {
+    title: 'Tell Us Your Needs 📝',
+    description:
+      'Fill out a quick form so we understand your business requirements and goals.',
+  },
+  {
+    title: 'We Match the Right VA 🤝',
+    description:
+      'Based on your needs, we connect you with a skilled and vetted virtual assistant.',
+  },
+  {
+    title: 'Start Delegating 🚀',
+    description:
+      'Begin assigning tasks and enjoy more free time to focus on growth.',
+  },
+];
+
+export default function HowItWorks() {
+  return (
+    <section
+      id="how-it-works"
+      className="py-20 relative overflow-hidden"
+      style={{
+        background:
+          'linear-gradient(180deg, rgba(228,0,43,0.07) 0%, rgba(228,0,43,0.15) 100%)',
+      }}
+    >
+      <div className="max-w-6xl mx-auto px-6">
+        {/* Heading */}
+        <motion.h2
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-5xl font-extrabold text-center text-black relative"
+        >
+          <span className="relative z-10 animate-pulse drop-shadow-[0_0_25px_rgba(255,0,0,0.9)]">
+            ✨ How It Works ✨
+          </span>
+          {/* Small centered glow */}
+          <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full blur-2xl bg-red-500/30 animate-ping"></span>
+        </motion.h2>
+
+        {/* Steps */}
+        <div className="mt-14 grid gap-10 grid-cols-1 sm:grid-cols-3">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{
+                y: -8,
+                scale: 1.05,
+                boxShadow: '0 0 35px rgba(255,0,0,0.8)',
+              }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="bg-gray-900/90 border border-red-500 rounded-2xl p-6 text-center shadow-lg relative overflow-hidden"
+            >
+              {/* Floating blurred light (smaller now) */}
+              <div className="absolute top-4 right-4 w-12 h-12 bg-red-500/30 blur-xl rounded-full animate-pulse"></div>
+
+              {/* Icon */}
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{ duration: 3, repeat: Infinity }}
+                className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-700 shadow-[0_0_15px_rgba(255,0,0,0.6)]"
+              >
+                <CheckCircleIcon className="w-10 h-10 text-white" />
+              </motion.div>
+
+              {/* Title */}
+              <h3 className="mt-6 text-xl font-bold text-white">{step.title}</h3>
+
+              {/* Description */}
+              <p className="text-sm text-gray-300 mt-3 leading-relaxed">
+                {step.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
