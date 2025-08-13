@@ -4,136 +4,184 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 
+// ⚠️ Update these imports to your actual file names/paths
+
+import paymentGatewayLogo from "../assets/services/payment-gateway.png";
+import customDesignLogo from "../assets/services/custom-design.png";
+import graphicDesignLogo from "../assets/services/graphic-design.png";
+import shopifyLogo from "../assets/services/shopify.png";
+import smoLogo from "../assets/services/smo.png";
+import websiteMaintenanceLogo from "../assets/services/website-maintenance.png";
+import websiteDevelopmentLogo from "../assets/services/website-development.png";
+
 const services = [
-  { id: 1, title: "Administrative Assistant", bullets: ["📅 Calendar & email management", "📦 Vendor coordination", "📊 Reports & docs"] },
-  { id: 2, title: "Customer Support", bullets: ["🎫 Ticket triage", "💬 Live chat support", "📋 CRM updates"] },
-  { id: 3, title: "Lead Generation", bullets: ["🔍 Prospect research", "📧 Cold outreach", "📂 Lists & CRM import"] },
-  { id: 4, title: "Accounting", bullets: ["💰 Bookkeeping", "🧾 Invoice processing", "✅ Reconciliation"] },
+ 
+  {
+    title: "Payment Gateway Integration",
+    desc: "Secure, seamless checkout with Razorpay, Stripe, PayPal and more.",
+    img: paymentGatewayLogo,
+  },
+  {
+    title: "Custom Design",
+    desc: "Unique, on-brand UI/UX that delights users and drives conversions.",
+    img: customDesignLogo,
+  },
+  {
+    title: "Graphic Design",
+    desc: "Logos, banners, posters & social creatives that stand out.",
+    img: graphicDesignLogo,
+  },
+  {
+    title: "Shopify",
+    desc: "Store setup, theme customization, apps & optimization for sales.",
+    img: shopifyLogo,
+  },
+  {
+    title: "SMO",
+    desc: "Profile optimization, content strategy & growth across platforms.",
+    img: smoLogo,
+  },
+  {
+    title: "Website Maintenance",
+    desc: "Updates, backups, bug fixes & monitoring to keep things smooth.",
+    img: websiteMaintenanceLogo,
+  },
+  {
+    title: "Website Development",
+    desc: "Modern, scalable full-stack builds with clean, secure code.",
+    img: websiteDevelopmentLogo,
+  },
 ];
 
-const Card = ({ s, idx, isMobile }) => (
+const Card = ({ s, isMobile }) => (
   <motion.div
     initial={{
       opacity: 0,
-      scale: 0.95,
+      y: 30,
       rotateY: isMobile ? 6 : 0,
       rotateX: isMobile ? -6 : 0,
+      scale: 1.02,
     }}
     animate={
       isMobile
         ? {
             rotateY: [6, -6, 6],
             rotateX: [-6, 6, -6],
-            transition: { duration: 3, ease: "easeInOut" },
+            transition: { duration: 3, ease: "easeInOut", repeat: Infinity },
           }
         : {}
     }
-    whileInView={{ opacity: 1, scale: 1 }}
+    whileInView={{ opacity: 1, y: 0 }}
     whileHover={{
-      rotateX: 8,
-      rotateY: -8,
+      rotateY: 8,
+      rotateX: -8,
       scale: 1.05,
-      boxShadow: "0 25px 50px rgba(0,0,0,0.15), 0 0 30px rgba(0,242,255,0.4)",
+      boxShadow:
+        "0 25px 50px rgba(0,0,0,0.2), 0 0 30px rgba(228,0,43,0.3)",
     }}
     whileTap={{
-      rotateX: 8,
-      rotateY: -8,
+      rotateY: 8,
+      rotateX: -8,
       scale: 1.05,
-      boxShadow: "0 25px 50px rgba(0,0,0,0.15), 0 0 30px rgba(0,242,255,0.4)",
+      boxShadow:
+        "0 25px 50px rgba(0,0,0,0.2), 0 0 30px rgba(228,0,43,0.3)",
     }}
-    viewport={{ once: true }}
     transition={{ type: "spring", stiffness: 200, damping: 15 }}
-    className="relative p-6 rounded-xl shadow-lg border border-transparent 
-               bg-gradient-to-br from-[#2a2a2a] via-[#333] to-[#2a2a2a]
-               hover:border-[#00f2ff] 
-               transform-gpu transition-all duration-300"
+    viewport={{ once: true }}
+    className="relative bg-white rounded-2xl shadow-lg p-6 text-center border border-gray-100 transform-gpu"
     style={{ transformStyle: "preserve-3d" }}
   >
-    {/* Glow background */}
-    <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-cyan-500/10 to-transparent opacity-70 blur-xl pointer-events-none"></div>
+    {/* Glow background (red theme to match your Team cards) */}
+    <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-red-50 via-white to-white opacity-60 blur-xl pointer-events-none"></div>
+
+    {/* Logo circle */}
+    <div
+      className="relative w-28 h-28 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-red-100 to-red-200 border-4 border-white shadow-xl overflow-hidden"
+      style={{ transform: "translateZ(40px)" }}
+    >
+      <img
+        src={s.img}
+        alt={s.title}
+        className="w-16 h-16 object-contain"
+        loading="lazy"
+      />
+    </div>
 
     <h3
-      className="font-bold text-lg text-[#00f2ff] drop-shadow-lg"
-      style={{ transform: "translateZ(30px)" }}
+      className="mt-6 font-semibold text-lg text-gray-900"
+      style={{ transform: "translateZ(25px)" }}
     >
       {s.title}
     </h3>
-    <ul
-      className="mt-3 text-gray-300 text-sm space-y-2 list-disc list-inside"
-      style={{ transform: "translateZ(25px)" }}
+    <p
+      className="text-sm text-gray-600 mt-2"
+      style={{ transform: "translateZ(20px)" }}
     >
-      {s.bullets.map((b, i) => (
-        <li key={i}>{b}</li>
-      ))}
-    </ul>
-    <div className="mt-5" style={{ transform: "translateZ(20px)" }}>
-      <a
-        href="#contact"
-        className="block text-center px-4 py-2 rounded-lg 
-                   bg-[#00f2ff] text-black font-semibold 
-                   hover:bg-cyan-400 transition shadow-lg"
-      >
-        Hire for this
-      </a>
-    </div>
+      {s.desc}
+    </p>
   </motion.div>
 );
 
 export default function Services() {
   const [isMobile, setIsMobile] = useState(false);
 
+
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 768); 
     }
+    
   }, []);
 
   return (
-    <section
-      id="services"
-      className="py-16 bg-gradient-to-b from-[#e4002b0d] to-white"
-    >
+    <section id="services" className="py-20 bg-gradient-to-b from-[#e4002b0d] to-white">
       <div className="max-w-7xl mx-auto px-6">
         {/* Heading */}
         <motion.h2
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl sm:text-5xl font-extrabold text-center text-black drop-shadow-lg"
+          className="text-5xl font-extrabold text-center text-black tracking-tight drop-shadow-md"
         >
           Our Premium Services
         </motion.h2>
 
         <motion.p
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-center text-gray-600 mt-3 max-w-2xl mx-auto"
+          className="mt-4 text-center text-gray-600 max-w-2xl mx-auto text-lg font-medium"
         >
-          Flexible, skilled assistants across common business functions.
+          Powerful, secure and visually stunning solutions—built to grow your business.
         </motion.p>
 
-        {/* Desktop Grid */}
-        <div className="hidden sm:grid mt-10 grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((s, idx) => (
-            <Card key={s.id} s={s} idx={idx} isMobile={false} />
+        {/* Desktop grid */}
+        <div
+          className="hidden md:grid mt-12 grid-cols-2 lg:grid-cols-4 gap-10"
+          style={{ perspective: "1000px" }}
+        >
+          {services.map((s, i) => (
+            <Card key={i} s={s} isMobile={false} />
           ))}
         </div>
 
-        {/* Mobile Slider */}
-        <div className="sm:hidden mt-8">
+        {/* Mobile slider (auto 1.5s + swipe) */}
+        <div className="md:hidden mt-10" style={{ perspective: "1000px" }}>
           <Swiper
             modules={[Autoplay]}
-            autoplay={{ delay: 2000, disableOnInteraction: false }}
             spaceBetween={16}
-            slidesPerView={1.1}
-            loop
+            slidesPerView={1.05}
+            centeredSlides={true}
+            loop={true}
+            grabCursor={true}
+            autoplay={{ delay: 1500, disableOnInteraction: false }}
+            speed={600}
           >
-            {services.map((s, idx) => (
-              <SwiperSlide key={s.id}>
-                <Card s={s} idx={idx} isMobile={isMobile} />
+            {services.map((s, i) => (
+              <SwiperSlide key={i}>
+                <Card s={s} isMobile={true} />
               </SwiperSlide>
             ))}
           </Swiper>

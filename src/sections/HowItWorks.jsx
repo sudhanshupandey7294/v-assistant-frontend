@@ -39,11 +39,9 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           className="text-5xl font-extrabold text-center text-black relative"
         >
-          <span className="relative z-10 animate-pulse drop-shadow-[0_0_25px_rgba(255,0,0,0.9)]">
+          <span className="relative z-10">
             ✨ How It Works ✨
           </span>
-          {/* Small centered glow */}
-          <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 rounded-full blur-2xl bg-red-500/30 animate-ping"></span>
         </motion.h2>
 
         {/* Steps */}
@@ -55,30 +53,28 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               whileHover={{
                 y: -8,
-                scale: 1.05,
-                boxShadow: '0 0 35px rgba(255,0,0,0.8)',
+                scale: 1.05, // Only smooth motion, no glow
               }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-gray-900/90 border border-red-500 rounded-2xl p-6 text-center shadow-lg relative overflow-hidden"
+              className="bg-white border border-gray-200 rounded-2xl p-6 text-center shadow-lg relative overflow-hidden"
             >
-              {/* Floating blurred light (smaller now) */}
-              <div className="absolute top-4 right-4 w-12 h-12 bg-red-500/30 blur-xl rounded-full animate-pulse"></div>
+              {/* Floating blurred light removed */}
 
               {/* Icon */}
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ duration: 3, repeat: Infinity }}
-                className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-red-500 to-red-700 shadow-[0_0_15px_rgba(255,0,0,0.6)]"
+                className="w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-gray-500 to-gray-700 shadow-md"
               >
                 <CheckCircleIcon className="w-10 h-10 text-white" />
               </motion.div>
 
               {/* Title */}
-              <h3 className="mt-6 text-xl font-bold text-white">{step.title}</h3>
+              <h3 className="mt-6 text-xl font-bold text-gray-900">{step.title}</h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-300 mt-3 leading-relaxed">
+              <p className="text-sm text-gray-600 mt-3 leading-relaxed">
                 {step.description}
               </p>
             </motion.div>
