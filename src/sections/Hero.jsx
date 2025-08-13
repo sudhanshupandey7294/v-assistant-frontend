@@ -422,39 +422,20 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* Right Side Image with Neon Border */}
+        {/* Right Side Image with 3D only */}
         <motion.div
           initial={{ rotateY: 15, rotateX: -10, opacity: 0 }}
           animate={{ rotateY: 0, rotateX: 0, opacity: 1 }}
-          whileHover={{ rotateY: 15, rotateX: -10, scale: 1.05 }}
           transition={{ type: "spring", stiffness: 120, damping: 20 }}
           className="flex-1 max-w-sm md:max-w-md mx-auto relative"
           style={{ perspective: "1200px" }}
         >
-          {/* White-creamy animated border */}
-          <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-white/70 via-yellow-100/60 to-white/70 animate-gradient-move blur-lg"></div>
-
           <div className="relative rounded-3xl overflow-hidden border border-white/20">
             <img src={heroImage} alt="Hero" className="w-full h-full object-cover rounded-3xl relative z-10" />
           </div>
         </motion.div>
 
       </div>
-
-      {/* Electric border animation keyframes */}
-      <style>
-        {`
-          @keyframes gradientMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-          }
-          .animate-gradient-move {
-            background-size: 300% 300%;
-            animation: gradientMove 4s linear infinite;
-          }
-        `}
-      </style>
     </section>
   );
 }
