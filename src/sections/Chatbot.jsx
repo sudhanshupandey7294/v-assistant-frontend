@@ -104,7 +104,7 @@ export default function Chatbot() {
                   <FaRobot size={18} />
                 </div>
                 <div>
-                  <div className="font-semibold">D -SERVICES AI</div>
+                  <div className="font-semibold">A9VA AI</div>
                   <div className="text-xs opacity-80">We’re here to help — ask anything</div>
                 </div>
               </div>

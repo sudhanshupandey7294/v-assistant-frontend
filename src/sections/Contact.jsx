@@ -177,10 +177,13 @@ export default function Contact() {
             className={inputClasses}
           >
             <option value="">Select role (optional)</option>
-            <option>Administrative</option>
-            <option>Customer Support</option>
-            <option>Lead Generation</option>
-            <option>Accounting</option>
+            <option>Payment Gateway Integration</option>
+            <option>Custom Design</option>
+            <option>Graphic Design</option>
+            <option>Shopify</option>
+            <option>Website Maintainance</option>
+            <option>Website Development</option>
+            <option>SMO</option>
           </select>
           <textarea
             name="message"

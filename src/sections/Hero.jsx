@@ -182,15 +182,13 @@
 //     </section>
 //   );
 // }
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
+import { FaChartLine, FaUsers, FaLaptop, FaBullhorn, FaWhatsapp, FaEnvelope } from "react-icons/fa";
 
-import { FaChartLine, FaUsers, FaLaptop, FaBullhorn } from "react-icons/fa";
-
-// Import your service images
 import paymentGatewayLogo from "../assets/services/payment-gateway.png";
 import customDesignLogo from "../assets/services/custom-design.png";
 import graphicDesignLogo from "../assets/services/graphic-design.png";
@@ -211,37 +209,44 @@ const services = [
 
 const ServiceCard = ({ s }) => (
   <motion.div
-    initial={{ opacity: 0, y: 40, rotateX: 0, rotateY: 0 }}
+    initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
     whileHover={{
       rotateY: [0, 5, -5, 0],
-      rotateX: [0, 3, -3, 0],
+      rotateX: [0, 2, -2, 0],
       scale: 1.05,
       transition: { duration: 0.8, repeat: Infinity, repeatType: "mirror", ease: "easeInOut" },
-      boxShadow: "0 25px 60px rgba(0,0,0,0.25), 0 0 40px rgba(228,0,43,0.25)",
+      boxShadow: "0 20px 50px rgba(0,0,0,0.2), 0 0 30px rgba(228,0,43,0.2)",
     }}
-    whileTap={{ scale: 0.98 }}
-    transition={{ type: "spring", stiffness: 200, damping: 15 }}
-    className="relative bg-white rounded-3xl shadow-lg p-6 text-center border border-gray-100 mx-auto max-w-[240px] w-full"
+    className="relative bg-white rounded-3xl shadow-lg p-4 text-center border border-gray-100 mx-auto w-[180px] min-h-[220px]"
     style={{ transformStyle: "preserve-3d" }}
   >
-    {/* Glow background */}
     <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-red-50 via-white to-white opacity-50 blur-xl pointer-events-none"></div>
 
-    {/* Logo circle */}
-    <div className="relative w-28 h-28 mx-auto flex items-center justify-center rounded-full bg-gradient-to-br from-red-100 to-red-200 border-4 border-white shadow-xl overflow-hidden" style={{ transform: "translateZ(40px)" }}>
-      <img src={s.img} alt={s.title} className="w-16 h-16 object-contain" loading="lazy" />
+    {/* Circular Logo fully covering the circle */}
+    <div className="relative w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-red-100 to-red-200 border-3 border-white shadow-xl overflow-hidden flex items-center justify-center" style={{ transform: "translateZ(30px)" }}>
+      <img
+        src={s.img}
+        alt={s.title}
+        className="w-full h-full object-cover rounded-full"
+        loading="lazy"
+      />
     </div>
 
-    <h3 className="mt-6 font-semibold text-lg text-gray-900" style={{ transform: "translateZ(25px)" }}>{s.title}</h3>
-    <p className="text-sm text-gray-600 mt-2" style={{ transform: "translateZ(20px)" }}>{s.desc}</p>
+    <h3 className="mt-3 font-semibold text-md text-gray-900" style={{ transform: "translateZ(20px)" }}>
+      {s.title}
+    </h3>
+    <p className="text-xs text-gray-600 mt-1" style={{ transform: "translateZ(15px)" }}>
+      {s.desc}
+    </p>
   </motion.div>
 );
 
 export default function Hero() {
   return (
     <section className="bg-gradient-to-br from-[#e4002b] via-[#b00020] to-[#800016] min-h-screen relative overflow-hidden">
-      {/* Floating background marketing icons */}
+      
+      {/* Floating marketing icons */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div initial={{ y: -50, opacity: 0 }} animate={{ y: [0, 20, 0], opacity: 0.15 }} transition={{ duration: 6, repeat: Infinity }} className="absolute top-20 left-10 text-white text-6xl"><FaChartLine /></motion.div>
         <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: [0, -20, 0], opacity: 0.15 }} transition={{ duration: 8, repeat: Infinity }} className="absolute bottom-32 right-12 text-white text-7xl"><FaUsers /></motion.div>
@@ -249,40 +254,54 @@ export default function Hero() {
         <motion.div initial={{ y: 40, opacity: 0 }} animate={{ y: [0, -15, 0], opacity: 0.15 }} transition={{ duration: 9, repeat: Infinity }} className="absolute bottom-16 left-1/4 text-white text-6xl"><FaBullhorn /></motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto py-24 px-6 flex flex-col items-center gap-16 text-white">
-        {/* Left Side Content */}
-        <motion.div initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7, ease: 'easeOut' }} className="flex-1 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight drop-shadow-[0_0_10px_rgba(255,255,255,0.4)]">
+      <div className="max-w-7xl mx-auto py-24 px-6 flex flex-col gap-2">
+
+        {/* Left Side */}
+        <motion.div initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.7 }} className="flex flex-col justify-center gap-2">
+          <h1 className="text-4xl md:text-5xl font-extrabold leading-tight tracking-tight text-white drop-shadow-lg">
             Trusted Remote Assistants to Power Your Business
           </h1>
-          <p className="mt-6 max-w-xl text-gray-200 text-lg leading-relaxed drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]">
+
+          <p className="text-gray-200 text-lg mt-4 max-w-lg leading-relaxed drop-shadow-[0_0_5px_rgba(255,255,255,0.2)]">
             Hire skilled, vetted virtual assistants for admin, accounting, lead-gen, social media and more — scale quickly without the overhead.
           </p>
+
+          <div className="flex gap-4 mt-4">
+            <motion.a href="https://wa.me/+919971101450" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.15 }} className="flex items-center gap-2 px-4 py-2 bg-green-500 rounded-full text-white font-semibold hover:bg-green-600 transition-all">
+              <FaWhatsapp /> WhatsApp
+            </motion.a>
+            <motion.a href="mailto:deepaka9va@gmail.com" whileHover={{ scale: 1.15 }} className="flex items-center gap-2 px-4 py-2 bg-red-500 rounded-full text-white font-semibold hover:bg-red-600 transition-all">
+              <FaEnvelope /> Email
+            </motion.a>
+          </div>
         </motion.div>
 
-        {/* Services Section */}
-        <div className="w-full mt-12 text-center">
-          <motion.h2 initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-lg mb-10">
-            Our Premium Services
+        {/* Right Side: Services Slider Below Left Side */}
+        <div className="flex flex-col items-center mt-12">
+          <motion.h2 initial={{ opacity: 0, y: -30 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="text-4xl md:text-5xl font-extrabold text-white tracking-tight drop-shadow-lg mb-6 text-center">
+            A9VA Services
           </motion.h2>
 
-          <Swiper
-            modules={[Autoplay]}
-            spaceBetween={20}
-            slidesPerView={1}
-            centeredSlides={true}
-            loop={true}
-            grabCursor={true}
-            autoplay={{ delay: 2500, disableOnInteraction: false }}
-            speed={800}
-          >
-            {services.map((s, i) => (
-              <SwiperSlide key={i} className="flex justify-center">
-                <ServiceCard s={s} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <div className="max-h-[280px] w-full">
+            <Swiper
+              modules={[Autoplay]}
+  spaceBetween={12}
+  slidesPerView={1}
+  centeredSlides={true}
+  loop={true}
+  grabCursor={true}
+  autoplay={{ delay: 4000, disableOnInteraction: false }} // increased delay
+  speed={1000} // slower transition speed
+>
+  {services.map((s, i) => (
+    <SwiperSlide key={i} className="flex justify-center">
+      <ServiceCard s={s} />
+    </SwiperSlide>
+  ))}
+            </Swiper>
+          </div>
         </div>
+
       </div>
     </section>
   );
