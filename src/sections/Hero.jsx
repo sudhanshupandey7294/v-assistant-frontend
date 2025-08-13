@@ -386,7 +386,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaChartLine, FaUsers, FaLaptop, FaBullhorn, FaWhatsapp, FaEnvelope } from "react-icons/fa";
-import heroImage from "../assets/hero-image.png"; // <-- replace with your image path
+import heroImage from "../assets/hero-image1.png"; // <-- replace with your image path
 
 export default function Hero() {
   return (
