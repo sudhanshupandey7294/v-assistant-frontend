@@ -58,7 +58,7 @@ export default function Footer() {
             Contact
           </h4>
           <p className="text-sm">📧 deepaka9va@gmail.com</p>
-          <p className="text-sm">📞+91 99711 01450</p>
+          {/* <p className="text-sm">📞+91 99711 01450</p> */}
 
           {/* Social Icons */}
           <div className="flex space-x-5 mt-5">
