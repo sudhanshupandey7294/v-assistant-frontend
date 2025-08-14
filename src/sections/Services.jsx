@@ -518,7 +518,7 @@ export default function Services() {
           viewport={{ once: true }}
           className="text-5xl font-extrabold text-center text-black tracking-tight drop-shadow-md"
         >
-          Our Premium Services
+          Our Services
         </motion.h2>
 
         <motion.p

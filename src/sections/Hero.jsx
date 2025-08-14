@@ -416,7 +416,7 @@ export default function Hero() {
             <motion.a href="https://wa.me/+919971101450" target="_blank" rel="noopener noreferrer" whileHover={{ scale: 1.1 }} className="flex items-center gap-2 px-4 py-2 bg-green-500 rounded-full text-white font-semibold hover:bg-green-600 transition-all">
               <FaWhatsapp /> WhatsApp
             </motion.a>
-            <motion.a href="mailto:deepak@a9va.com" whileHover={{ scale: 1.1 }} className="flex items-center gap-2 px-4 py-2 bg-red-500 rounded-full text-white font-semibold hover:bg-red-600 transition-all">
+            <motion.a href="mailto:info@a9va.com" whileHover={{ scale: 1.1 }} className="flex items-center gap-2 px-4 py-2 bg-red-500 rounded-full text-white font-semibold hover:bg-red-600 transition-all">
               <FaEnvelope /> Email
             </motion.a>
           </div>

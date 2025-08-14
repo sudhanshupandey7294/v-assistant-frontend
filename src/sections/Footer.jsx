@@ -57,7 +57,7 @@ export default function Footer() {
           <h4 className="font-semibold text-white mb-4 text-lg relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-cyan-400 after:animate-pulse">
             Contact
           </h4>
-          <p className="text-sm">📧 deepaka9va@gmail.com</p>
+          <p className="text-sm">📧 info@anva.com</p>
           {/* <p className="text-sm">📞+91 99711 01450</p> */}
 
           {/* Social Icons */}
