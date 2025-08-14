@@ -4,7 +4,7 @@ import Services from '../sections/Services'
 import HowItWorks from '../sections/HowItWorks'
 import Chatbot from '../sections/Chatbot';
 // import Team from '../sections/Team'
-import Testimonials from '../sections/Testimonials'
+// import Testimonials from '../sections/Testimonials'
 import Contact from '../sections/Contact'
 
 export default function Home(){
@@ -15,7 +15,7 @@ export default function Home(){
       <HowItWorks />
    
       {/* <Team /> */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Contact />
       <Chatbot />
     </div>
