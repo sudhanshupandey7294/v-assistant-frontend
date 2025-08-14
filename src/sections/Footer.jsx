@@ -5,7 +5,7 @@ import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 export default function Footer() {
   const socialLinks = [
     { icon: FaFacebook, url: "https://facebook.com/yourpage", color: "#1877F2" },
-    { icon: FaLinkedin, url: "https://linkedin.com/company/yourcompany", color: "#0A66C2" },
+    { icon: FaLinkedin, url: "https://www.linkedin.com/in/deepak-vidyarthi-83b73436/", color: "#0A66C2" },
     { icon: FaTwitter, url: "https://twitter.com/yourcompany", color: "#1DA1F2" },
   ];
 
@@ -57,8 +57,8 @@ export default function Footer() {
           <h4 className="font-semibold text-white mb-4 text-lg relative inline-block after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-cyan-400 after:animate-pulse">
             Contact
           </h4>
-          <p className="text-sm">📧 info@virtualassistpro.com</p>
-          <p className="text-sm">📞 +1 234 567 890</p>
+          <p className="text-sm">📧 deepaka9va@gmail.com</p>
+          <p className="text-sm">📞+91 99711 01450</p>
 
           {/* Social Icons */}
           <div className="flex space-x-5 mt-5">
