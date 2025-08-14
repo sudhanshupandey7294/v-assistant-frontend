@@ -6,7 +6,7 @@ import anva from '../assets/anva.png'; // Your logo path
 const navLinks = [
   { href: '#services', label: 'Services' },
   { href: '#how', label: 'How it works' },
-  { href: '#team', label: 'Team' },
+  // { href: '#team', label: 'Team' },
   { href: '#testimonials', label: 'Testimonials' },
 ];
 
