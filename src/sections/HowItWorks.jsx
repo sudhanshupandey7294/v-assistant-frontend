@@ -23,7 +23,7 @@ const steps = [
 export default function HowItWorks() {
   return (
     <section
-      id="how-it-works"
+      id="how"
       className="py-20 relative overflow-hidden"
       style={{
         background:
