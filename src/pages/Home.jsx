@@ -7,6 +7,7 @@ import Chatbot from '../sections/Chatbot';
 // import Testimonials from '../sections/Testimonials'
 import Contact from '../sections/Contact'
 import CTA from '../sections/CTA';
+import ServicesPricing from '../sections/ServicesPricing';
 
 export default function Home(){
   return (
@@ -14,6 +15,7 @@ export default function Home(){
       <Hero />
        <CTA />
       <Services />
+      <ServicesPricing />
       <HowItWorks />
    
       {/* <Team /> */}
