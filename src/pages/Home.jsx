@@ -6,11 +6,13 @@ import Chatbot from '../sections/Chatbot';
 // import Team from '../sections/Team'
 // import Testimonials from '../sections/Testimonials'
 import Contact from '../sections/Contact'
+import CTA from '../sections/CTA';
 
 export default function Home(){
   return (
     <div>
       <Hero />
+       <CTA />
       <Services />
       <HowItWorks />
    
