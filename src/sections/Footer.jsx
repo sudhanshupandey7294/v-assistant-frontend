@@ -60,7 +60,7 @@ export default function Footer() {
             Contact
           </h4>
           <p className="text-sm">📧 deepakv@a9va.com</p>
-          {/* <p className="text-sm">📞 +91 99711 01450</p> */}
+          <p className="text-sm">📞 +15129385516</p>
           <p className="text-sm mt-2">📍 30 N Gould St Ste R, Sheridan, WY 82801</p>
 
           {/* Social Icons */}
