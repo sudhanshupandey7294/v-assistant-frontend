@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import anva from "../assets/anva.png"; // replace with your actual logo path
+import anva from "../assets/services/anva.png"; // replace with your actual logo path
 
 export default function Preloader({ onFinish }) {
   const [count, setCount] = useState(0);

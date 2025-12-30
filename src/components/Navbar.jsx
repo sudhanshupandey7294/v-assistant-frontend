@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import anva from '../assets/anva.png'; // Your logo path
+import anva from '../assets/services/anva.png'; // Your logo path
 
 const navLinks = [
   { href: '#services', label: 'Services' },
