@@ -122,7 +122,7 @@ export default function Chatbot() {
             {/* messages */}
             <div ref={chatBoxRef} className="h-64 overflow-y-auto p-4 space-y-3 bg-gradient-to-b from-white/80 to-white/60">
               {messages.length === 0 && (
-                <div className="text-center text-sm text-gray-500">Hi 👋 — ask me about our services or joining D -SERVICES.</div>
+                <div className="text-center text-sm text-gray-500">Hi 👋 — ask me about our services or joining A9VA.</div>
               )}
 
               {messages.map((m, i) => (
